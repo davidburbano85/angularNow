@@ -1,0 +1,16 @@
+en angular clic
+primero descargamos programa 
+2. en angular clic creamos primer proyecto con ng new
+3. vamos a nuestra carpeta abrimos con vcs 
+4. abrimos nueva terminal
+5. damos ng serve para crear una localhost en internet
+6. damos click en el enlace que nos da el internet que suele ser 
+http://localhost:4200/
+
+8.  creamos un componente que es un codigo que se puede reutilizar en una o mas ocasiones
+ y en si es un bloque compuesto por 3 archivos: .html .css 1. ts
+9 se crea componentes con ng generate component MAS 
+loq ue queramos crear en este caso sidebar
+10. ahi se crean unos textos que nos informan donde se crearon los componentes
+en este caso scr/app/sidebar
+11 tambien mas abajo esta app, module y ahi se muestra tambien el elemento sidebar
