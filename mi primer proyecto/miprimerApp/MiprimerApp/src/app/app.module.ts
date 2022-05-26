@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SiderbarComponent } from './siderbar/siderbar.component';
 import { HeaderComponent } from './header/header.component';
-import { SliderbarComponent } from './sliderbar/sliderbar.component';
 import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SiderbarComponent,
     HeaderComponent,
-    SliderbarComponent,
     CardComponent
   ],
   imports: [

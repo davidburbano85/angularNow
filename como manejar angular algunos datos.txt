@@ -11,7 +11,7 @@ http://localhost:4200/
  y en si es un bloque compuesto por 3 archivos: .html .css 1. ts
 9. se crea componentes con ng generate component MAS 
 loq ue queramos crear en este caso sidebar
-9.1. tambien se puede crear usando ng gc y lo que deseamos crear en este caso header
+9.1. tambien se puede crear usando ng g c y lo que deseamos crear en este caso header
 10. ahi se crean unos textos que nos informan donde se crearon los componentes
 en este caso scr/app/sidebar
 11 tambien mas abajo esta app, module y ahi se muestra tambien el elemento sidebar
