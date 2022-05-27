@@ -1,7 +1,7 @@
 .header
     {
         width: 100%;
-        background-color: black;
+        background-color: rgb(2, 0, 19);
         border-bottom: solid 0px rgb(47, 47, 51);
         color: rgb(236, 230, 223);        
       
@@ -18,13 +18,13 @@
 
 .logo
     {
-        height: 02rem;
+        height: 03rem;
 
     }
 .menu li
     {
-        font-weight:600 ;
-        padding: .5rem;
+        font-weight:.5rem ;
+        /* padding: .5rem; */
         text-align: center;
-        
+
     }

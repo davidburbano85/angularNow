@@ -1,3 +1,7 @@
 <router-outlet></router-outlet>
 <h1> Metallica</h1>
 <app-header></app-header>
+<div class="grid">
+    <app-card [dataentrante]="card" *ngFor="let card of arregloTarjetas"></app-card>    
+</div>
+<app-siderbar></app-siderbar>

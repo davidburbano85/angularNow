@@ -1,0 +1,15 @@
+
+.title
+    {
+       color: red;
+    }
+.title:hover
+    {
+        color: blue;
+        
+    }
+.image
+    {
+        max-width: 70%;
+        max-height: 70%;
+    }

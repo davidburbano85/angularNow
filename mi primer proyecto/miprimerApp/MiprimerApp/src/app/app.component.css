@@ -1,0 +1,11 @@
+.grid
+    {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        padding-left: 5rem;
+        padding-bottom: 10rem;
+        margin-top: 5rem;
+        
+        
+    }
