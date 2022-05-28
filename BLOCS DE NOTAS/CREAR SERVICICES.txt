@@ -1,0 +1,92 @@
+COMO EMITIR DATOS ENTRE COMPONENTES
+nos dirijimos al componente deseadoen este caso 
+card.component.html
+
+y creamos en este caso un boton 
+<div class="boton">
+    <button class="favorite" (click)="agregarFavorito()">add favorite</button>
+</div>
+
+esto solo envocara a un metodo llamado agregarFavorito
+
+AHORA CREAMOS UN SERVICIO
+EN LA TERMINAL CON 
+ng generate service MAS el nombre del servicio
+ en este caso servicioDeFavoritos
+
+QUEDARIA ASI
+
+ng generate service servicioDeFavoritos
+
+y esto crea un archivo constructor
+llamado
+ServicioDeFavoritosService
+
+AHORA LO USAMOS DE PUENTE 
+
+en este caso en nuestro card component.ts
+en el constructor
+(DE NO HABER UNO LO CREAMOS)
+ 
+constructor() { }
+
+Y LE DECIMOS QUE 
+pirvate
+
+CREAMOS UN ALIAS 
+
+servicioFavorito:
+
+Y COLOCAMOS EL NOMBRE DE NUESTRO SERVICIO
+
+ServicioDeFavoritosService 
+
+QUEDA ASI
+
+ constructor(private servicioFavoritos: ServicioDeFavoritosService) { }
+AHOR IMPORTAMOS ACERCANDO EL CURSOR A ServicioDeFavoritosService
+AHI NOS APARECE quick damos CLICK Y DESPUES IMPORTAR
+
+AHORA CARD.COMPONENT.TS YA TIENE ACCESOA LOS METODOS
+PUBLICOS DE EL SERVICIO DE FAVORITOS
+
+TAMBIEN LO VAMOS A NECESITAR IMPORTAR EN EL COMPONENTE QUE 
+QUIERE RECIBIR LA INFORMACION EN ESTE CASO 
+MIRAMOS EN LA APP.COMPONENT.HTML Y ENCONTRAMOS QUE 
+ESTA EL
+<app-siderbar></app-siderbar>
+ENTONCES NOS VAMOS 
+siderbar.component.ts
+en el constructor imprimimos de igual manera
+
+constructor(private servicioFavoritos: ServicioDeFavoritosService) { }
+ AHORA IMPORTAMOS
+
+AHORA NOS VAMOS AL SERVICIO Y CREAMOS UN DECORADOR
+LLAMADO OUTPUT
+
+@Output() open: EventEmitter<any>=new EventEmitter
+
+EN LA PARTE SUPERIOR EN import{EventEmitter, Injectable}
+AUMENTAMOS Output
+e inyectamos (importamos en angular core)
+AHORA EL EVENTO OPEN LE CAMBIAMOS EL NOMBRE Y QUEDARA ASI
+
+@Output() DisparadorDeFavoritos: EventEmitter<any>=new EventEmitter
+
+VAMOS AL CARD COMPONENT NUEVAMENTE Y LE DECIMOS QUE 
+CUANDO DEMOS CLICK EN agregarFavoritos ESTE VA A 
+LLAMAR AL METODO QUE ESTA EN EL SERVICIO DE FAVORITOS
+QUE SE LLAMA disparadorDeFavoritos Y SE COLOCA .emit
+POR QEU ESTE VA A EMITIR HACIA EL SERVICIO DE FAVORITOS
+Y LE VAMOS A PASAR EL OBJETO DE LA dataEntrante
+
+QUEDARIA ASI
+
+agregarFavoritos()
+		{
+			this.servicioFavoritos.disparadorDeFavoritos.emit(
+				{
+					data:this.dataentrante
+				})
+		}

@@ -9,8 +9,14 @@ import { ServicioDeFavoritosService } from '../servicio-de-favoritos.service';
 export class SiderbarComponent implements OnInit {
 
   constructor(private servicioFavoritos: ServicioDeFavoritosService) { }
+public listVideos:Array<any>=[]
+  ngOnInit(): void 
+    {
+      this.servicioFavoritos.disparadorDeFavoritos.subscribe(data =>
+        {
+          this.listVideos.push(data);
+        }
+    )}
 
-  ngOnInit(): void {
-  }
-
+  
 }
