@@ -1,0 +1,100 @@
+CREAR COMPONENTES
+UN COMPONENTE ES CODIGOQ EU SE PUEDE REUTILIZAR
+EN MUCHISIMAS OCASIONES EN ESCENCIA ES UN BLOQUE
+.CSS .HTML .TS 
+
+SE GENERA EN EL TERMINAL CON 
+ng generate component Y EL NOMBRE DEL COMPONENTE
+ EJEMPLO sidebar, header, card ENTRE OTROS
+
+Y CADA UNO VA A TENER LOS ARCHIVOS ANTES MENCIONADOS
+
+sidebar.component{.html .css .ts  .spec.ts}
+header.component{.html .css .ts  .spec.ts}
+card.component.html .css .ts  .spec.ts}
+
+CADA COMPONENTE TIENE UN SELECTORQUE ES PARA SER ENVOCADO
+<app-></app-> 
+SI ES EL SELECTOR DE card <app-card></app-card> 
+SI ES EL SELECTOR DE header<app-header></app-header> 
+SI ES EL SELECTOR DE sidebar<app-sidebar></app-sidebar> 
+
+SIEMPRE .ts VA A SER LA LOGICA DONDE SE LLAMA APPI O DATOS
+AQUI SE PUEDE DECLARAR VARIABLES TIPO STRING 
+EN MEDIO DE export class Y EL constructor(){} ASI
+
+export class CardComponent implements OnInit
+{
+	public image:string;
+	constructor(){}
+}
+
+ACABAMOS DE CREAR LA VARIABLE image AHORA DEBAJO DEL 
+ngOnInit LE DAREMOS EL VALOR DICIENDO QUE ESTA 
+VARIABLE IMAGEN NOS DIRIJIRA A UN LINK
+
+export class CardComponent implements OnInit
+{
+	public image:string;    (AQUI SE CREO LA VARIABLR)
+	constructor(){}
+
+	ngOnInit():void
+		{
+			this.image="AQUI VA EL LINK"
+		}
+}
+
+AHORA ESTO LO PODEMOS LLAMAR EN EL 
+app.component.html QUE EN ESTE CASO SERIA 
+<app-card></app-card> 
+
+PODEMOS LLAMAR MAS card DE LA SIGUIENTE MANERA
+
+EN app.component.ts SI EN  export class NO 
+APARECE LA FUNCION init LA INYECTAMOS ASI
+ 
+xport class CardComponent implements OnInit
+AL onOnInit TENEMOS QUE IMPORTARLO COLOCANDO EL
+CURSOR SOBRE EL Y LE DAMOS CLICK EN EL MSJ QUE APARECE
+
+AHORA PODEMOS COPIAR TODA LA FUNCION ngOnInit 
+PERO EN ESTE CASO DE card.component.ts Y LA
+PEGAMOS EN LA app.component.ts Y DECLARAMOS OTRA
+VARIABLE LLAMADA cards QUE SERA IGUAL A UN Array
+TIPO <any> y lo encerraremos en vacio asi
+
+public cards:Array<any>=[]
+
+ESTO SE HARA ENCIMA DEL ngOnInit
+Y AHORA DEBAJO DEL ngOnInit LE DIREMOS 
+
+this.cards=
+[
+	title:""
+	subtitle:""
+]
+
+
+AHORA EN EL app.component.html HAREMOS LA REFERENCIA
+*ngFor="" DONDE LE DIREMOS let card of cards
+ESTO SERIA RECORRER EL Array 
+
+AHORA EN EL  app.componet.ts METEMOS MAS ELEMENTOS
+
+[
+	title:""
+	subtitle:""
+]
+
+[
+	title:""
+	subtitle:""
+]
+YA EN LA PANTALLA SE VERA LAS COLUMNAS
+
+
+SIMEPRE RECORDAR QUE HAY UN CODIGO INICIAL LLAMADO
+app.component{.html .css .ts  .spec.ts}
+
+
+

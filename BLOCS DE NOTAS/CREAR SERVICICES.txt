@@ -90,3 +90,63 @@ agregarFavoritos()
 					data:this.dataentrante
 				})
 		}
+
+AHORA VAMOS A NUESTRO OTRO COMPONENTE DE siderbar 
+EN siderbar.component.ts ESTE ES EL QUE VA A RECIBIR
+EN NUESTRO ngOnInit VAMOS A INVOCAR EL servicioFavorito
+QUE ACABAMOS DE CREAR SEGUIDO DEL disparadorDeFavoritos 
+PERO CON LA DIFERENCIA QUE NO VA A EMITIR VA A RECIBIR
+ASI QUE LO HACEMOS CON UN  .subscribe() DONDE EL PRIMER METODO 
+QUE VA A ENTRAR ES LA data=>
+SI QUEREMOS VER EL console.log TENDRIAMOS QUE VER EL ("Recibiendo data...".data)
+
+
+
+ngOnInit():void
+{
+	this.servicioFavorito.disparadorDeFavoritos.subscribe(data=>
+
+		{
+			console.log("Recibiendo data...".data)
+
+		})	
+
+}
+
+AHORA FALTA CREAR LA PARTE VISUAL NOS VAMOS DE NUEVO A
+sidebar.component.ts Y DECLARAMOS EL ARRAY EN ESTE CASO 
+public listdeVideos:Array<any>=[] ESTA VA ENTRE EL 
+constructor(){} Y EL ngOnInit():void{}
+
+AHORA CON ESTA LISTA DE VIDEOS VAMOS A HACER UN ngFor PERO EN
+sidebar.component.html DENTRO DE <Li> y quedaria de la siguiente
+manera
+
+<div class="div">
+    <h3 class="title">Lista de Favoritos </h3>    
+</div>
+<div class="divider"></div>
+<div>
+    <ul class="favorite-list">
+        <li *ngFor="let video of listVideos">
+            <div class="card">
+                <img class="mini-image" src="" alt="">
+                <div class="title-inside">
+                        Title
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+AHORA VOLVEMOS AL sidebar.component.ts Y DONDE DICE 
+recibiendo data LE VAMOS A DECIR QUE EN
+
+this.listdeVideos.push(data)
+
+AQUI EN ESTE PUNTO YA ESTAMOS EMITIENDO COMPONENTES
+INDEPENDIENTES, AHORA SOLO QUEDA AGREGAR LA DATA UQE ESTA LLEGANDO
+
+
+
+
