@@ -1,0 +1,6 @@
+conexion bd NT Service\SQLAgent$DAVIDSQLINSTANCE
+servidor: localhost
+Instancia: davidSQLinstance
+PORT:8391
+pass:D4v1dBur
+usuario:DAVID
