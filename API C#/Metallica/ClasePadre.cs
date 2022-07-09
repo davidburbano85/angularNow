@@ -5,6 +5,6 @@ namespace Metallica
     public abstract class ClasePadre
     {
         [Key]//atributos 
-        public long Id { get; set; }//entero de 64 bits en bd bigint
+        public long Id { get; set; }//ESTO SI ES UNA VARIABLE LLAMADA Id entero de 64 bits en bd bigint
     }
 }
