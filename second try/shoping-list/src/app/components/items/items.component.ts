@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Item,  } from '../../models/item'
+import { Item  } from '../../models/item'
 
 @Component({
   selector: 'app-items',
@@ -42,10 +42,18 @@ export class ItemsComponent implements OnInit {
   
    
   }
+
   deleteItem(item:Item)
   {
     this.items=this.items.filter(x=> x.id !=item.id);
+    this.getTotal();
   }
+
+  toggleItem(item:Item)
+  {
+    this.getTotal()
+  }
+
   getTotal()
   {
     this.total = this.items
