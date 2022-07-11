@@ -1,19 +1,22 @@
-<div class="row">
-    <div>        
-        <input type="checkbox" [checked]="item.completed"><!--manera dinamica-->
+
+    <!--  *******ESTE COMPONENTE RECIBIRA TODA LA INFORMACION******  -->
+
+<div class="row" [ngClass]="{completed :item.completed}">
+    <div class="title">        
+        <input type="checkbox" [checked]="item.completed" (change)="onToggle(item)"><!--manera dinamica-->
     
         {{item.title}}
     </div>
-    <div>
-        {{item.price}}
+    <div class="price">
+        {{item.price | currency}} <!--CON PIPE | SE PUEDE AGREGAR UN METODO-->
     </div>
-    <div>
+    <div class="quantity">
         {{item.quantity}}
     </div>
-    <div>
-        {{(item.price*item.quantity)}}
+    <div class="total">
+        {{(item.price*item.quantity) | currency}}
     </div>
-    <div>
-        <button>Eliminar</button>
+    <div class="actions">
+        <button (click)="onDelete(item)" >Eliminar</button>
     </div>
 </div>
